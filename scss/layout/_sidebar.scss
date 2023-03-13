@@ -135,6 +135,11 @@
 
         &__sub-menu {
             margin: 5px 0;
+            display: none;
+
+            &--active {
+                display: block;
+            }
 
             .border {
                 border-left: 1px solid;
