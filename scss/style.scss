@@ -8,6 +8,8 @@
 @use "layout/main";
 @use "layout/sidebar";
 
+@use "pages/login";
+
 body {
     display: flex;
 
@@ -17,12 +19,12 @@ body {
     }
 
     header.header {
-        border-bottom: var(--seperator-height) solid var(--clr-seperator-color);
+        border-bottom: var(--seperator-height) solid var(--clr-seperator);
     }
 
     .sidebar {
         background-color: var(--clr-white);
-        border-right: var(--seperator-height) solid var(--clr-seperator-color);
+        border-right: var(--seperator-height) solid var(--clr-seperator);
     }
 
     // small screens

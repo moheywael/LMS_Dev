@@ -2,11 +2,11 @@ $colors: (
     primary: (
         //brightest
         100: #5350f7,
-        // 200: #4240c6,
+        200: #4240c6,
         // 300: #323094,
         // 400: #212063,
         // 500: #111031,
-        //darkest,,,,,,,,,
+        //darkest,,,,,,,,,,
     ),
 
     secondary: (
@@ -16,7 +16,7 @@ $colors: (
         // 300: #919199,
         // 400: #616166,
         // 500: #303033,
-        //darkest,,,,,,,,
+        //darkest,,,,,,,,,
     ),
 
     nutral: (
@@ -26,7 +26,7 @@ $colors: (
         // 300: #dddddd,
         // 400: #616166,
         // 500: #222222,
-        //darkest,,,,,,,,
+        //darkest,,,,,,,,,
     ),
 
     danger: (
@@ -36,7 +36,7 @@ $colors: (
         // 300: #993333,
         // 400: #802b2b,
         // 500: #331111,
-        //darkest,,,,,,,,
+        //darkest,,,,,,,,,
     ),
 
     success: (
@@ -46,7 +46,7 @@ $colors: (
         // 300: #186429,
         // 400: #10431c,
         // 500: #08210e,
-        //darkest,,,,,,,,
+        //darkest,,,,,,,,,
     ),
 
     warning: (
@@ -56,7 +56,7 @@ $colors: (
         // 300: #186429,
         // 400: #10431c,
         // 500: #08210e,
-        //darkest,,,,,,,,
+        //darkest,,,,,,,,,
     ),
 );
 
@@ -71,5 +71,5 @@ $colors: (
     // other Colors
     --clr-white: #ffffff;
     --clr-black: #000000;
-    --clr-seperator-color: gray;
+    --clr-seperator: gray;
 }

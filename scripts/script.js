@@ -16,7 +16,7 @@ let sidebar_activityCenter = document.querySelector(".activity-center")
 
 // Event Listeners - Sidebar
 sidebar_toggle.addEventListener("click", collapse)
-sidebar_activityCenter.addEventListener("click", activiryExpand)
+sidebar_activityCenter.addEventListener("click", activityExpand)
 
 
 // Event Listeners - Sidebar
@@ -38,8 +38,6 @@ sidebar_subMenu_btn.forEach(subMenu => {
 })
 
 
-
-
 // Functions
 function collapse() {
     sidebar.classList.toggle("collapsed")
@@ -53,9 +51,6 @@ function collapse() {
     })
 }
 
-function activiryExpand() {
+function activityExpand() {
     sidebar_activityCenter.classList.toggle("activity-center--active")
 }
-
-// function expand() {}
-
