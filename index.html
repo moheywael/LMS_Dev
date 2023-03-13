@@ -2,22 +2,158 @@
 <html lang="en">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Fontawesome Links -->
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/solid.css">
+    <!-- <link rel="stylesheet" href="assets/fonts/fontawesome/css/brands.css"> -->
+
     <!-- Styles -->
-    
+    <link rel="stylesheet" href="scss/dist/style.css">
 
     <!-- Scripts -->
     <script src="scripts/script.js" defer></script>
     <script src="scripts/components.js" defer></script>
 
     <title>LMS | Home</title>
+    <link rel="icon" href="assets/images/lms-icon.png">
 </head>
 
 <body>
 
+    <!-- :::::::: Sidebar :::::::: -->
+
+    <aside class="sidebar">
+
+        <!-- sidebar header -->
+        <div class="sidebar__header">
+
+            <!-- sidebar header icon -->
+            <div class="sidebar__header__icon-img">
+                <img src="assets/images/lms-icon.png">
+            </div>
+
+            <!-- sidebar header text -->
+            <div class="sidebar__header__icon-text">
+                <span>LMS</span>
+                <span>Learning Management System</span>
+            </div>
+
+            <!-- sidebar header toggle -->
+            <div class="sidebar__header__toggle">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+        </div>
+
+
+        <!-- sidebar body -->
+        <div class="sidebar__body">
+
+            <ul class="sidebar__body__menu">
+                <!-- sidebar menu label -->
+                <span class="sidebar__body__menu__menu-label">General</span>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-star"></i>
+                        <span>Scoreboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-book"></i>
+                        <span>E-Learning <i class="fa-solid fa-angle-down"></i></span>
+                    </a>
+                </li>
+
+                <ul class="sidebar__body__sub-menu elearning-sub-menu">
+                    <!-- sidebar side menu outer border -->
+                    <div class="border">
+                        <li>
+                            <a href="">
+                                <span>Quizzes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Assignments</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Materials</span>
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-chart-simple"></i>
+                        <span>Semester Work <i class="fa-solid fa-angle-down"></i></span>
+                    </a>
+                </li>
+
+                <ul class="sidebar__body__sub-menu semesterwork-sub-menu" id="semesterwork">
+                    <!-- sidebar side menu outer border -->
+                    <div class="border">
+                        <li>
+                            <a href="">
+                                <span>schedule</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Grades book</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <span>Absence</span>
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </ul>
+
+        </div>
+    </aside>
+
+    <!-- ************************************************************* -->
+
+    <!-- Main Container -->
+    <div class="main-container">
+
+        <!-- :::::::: Header :::::::: -->
+        <header class="header">
+
+        </header>
+
+        <!-- :::::::: Main :::::::: -->
+        <main class="main"></main>
+    </div>
+
+
+
+    <!-- ------------------------ -->
+
+    <!-- Extras -->
+
+    <!-- 1. activity center -->
+    <!-- <div class="activity-center"></div> -->
+
+    <!-- 2. general popup -->
+
+    <!-- 3. preloader -->
 </body>
 
 </html>
