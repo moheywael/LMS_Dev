@@ -28,3 +28,11 @@ img {
 .rotate {
     rotate: 180deg;
 }
+
+button {
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    width: fit-content;
+    color: black;
+}

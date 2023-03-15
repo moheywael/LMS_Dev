@@ -52,8 +52,8 @@
         }
 
         &__toggle {
-            width: var(--size-sm);
-            height: var(--size-sm);
+            width: var(--size-xsm);
+            height: var(--size-xsm);
 
             position: absolute;
 
@@ -206,16 +206,35 @@
     border-radius: 10px;
     cursor: pointer;
     transition: bottom var(--transition-duration), left var(--transition-duration), width var(--transition-duration),
-        height var(--transition-duration), translate var(--transition-duration);
+        height var(--transition-duration), translate var(--transition-duration), border var(--transition-duration),
+        top var(--transition-duration);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .term-timing {
+        display: none;
+    }
 
     &--active {
         bottom: 50%;
         left: 50%;
         translate: -50% 50%;
+        cursor: auto;
 
         // hard-coded
         width: 500px !important; //a way to remove > !important
         height: 400px;
+
+        .content-number {
+            display: none;
+        }
+    }
+
+    .content-number {
+        color: var(--clr-white);
+        font-weight: 600;
     }
 
     @media (max-width: 700px) {
@@ -226,13 +245,42 @@
         left: 50%;
         translate: -50% 0;
 
+        .term-timing {
+            display: block;
+        }
+
+        .content-number {
+            display: none;
+        }
+
         &--active {
             translate: -50% 0;
             background-color: var(--clr-secondary-100);
             border: 2px solid var(--clr-primary-100);
-            top: 15%;
+            top: 10%;
             width: 80% !important;
-            height: 60%;
+            // min-height: 40%;
+            // height: 40%;
+            // min-height: 150px;
+            height: fit-content; //working just on web not iphone
+            // height: min(150px, 60%);
+            height: max(60%, 150px);
+
+            .term-timing {
+                display: none;
+            }
         }
+    }
+}
+
+// Selected Element
+.selected {
+    background-color: var(--clr-primary-100);
+    * {
+        color: var(--clr-white);
+    }
+
+    &:hover {
+        background-color: var(--clr-primary-100) !important;
     }
 }

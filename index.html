@@ -17,7 +17,9 @@
 
     <!-- Scripts -->
     <script src="scripts/script.js" defer></script>
-    <script src="scripts/components.js" defer></script>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/header.js" defer></script>
+    <script src="scripts/sidebar.js" defer></script>
 
     <title>LMS | Home</title>
     <link rel="icon" href="assets/images/lms-icon.png">
@@ -25,8 +27,9 @@
 
 <body>
 
-    <!-- :::::::: Sidebar :::::::: -->
-
+    <!-- ===================================================== -->
+    <!-- :::::::::::::: Sidebar Desktop Version :::::::::::::: -->
+    <!-- ===================================================== -->
     <aside class="sidebar">
 
         <!-- sidebar header -->
@@ -57,13 +60,13 @@
                 <!-- sidebar menu label -->
                 <span class="sidebar__body__menu__menu-label">General</span>
                 <li>
-                    <a href="#">
+                    <a href="./index.html" class="selected">
                         <i class="fas fa-home"></i>
                         <span>Home</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./pages/main-scoreboard.html">
                         <i class="fas fa-star"></i>
                         <span>Scoreboard</span>
                     </a>
@@ -133,13 +136,46 @@
     <!-- Main Container -->
     <div class="main-container">
 
-        <!-- :::::::: Header :::::::: -->
+        <!-- ==================================== -->
+        <!-- :::::::::::::: Header :::::::::::::: -->
+        <!-- ==================================== -->
         <header class="header">
+
+            <!-- Desktop Version -->
+
+
+            <!-- Mobile Version -->
+            <div class="mobile-header-controls">
+                <div class="header-toggle sidebar-toggle">
+                    <i class="fa-sharp fa-solid fa-bars"></i>
+                </div>
+                <div class="header-toggle navbar-toggle">
+                    <i class="fa-sharp fa-solid fa-bars"></i>
+                </div>
+            </div>
 
         </header>
 
-        <!-- :::::::: Main :::::::: -->
-        <main class="main"></main>
+        <!-- ================================== -->
+        <!-- :::::::::::::: Main :::::::::::::: -->
+        <!-- ================================== -->
+        <main class="main">
+
+            <!-- content -->
+
+
+
+
+            <!-- preloader -->
+            <!-- <div class="preloader-overlay">
+                <div class="lds-facebook">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div> -->
+
+        </main>
     </div>
 
 
@@ -149,15 +185,162 @@
     <!-- Extras -->
 
     <!-- 1. activity center -->
-    <div class="activity-center"></div>
+    <div class="activity-center">
+
+        <!-- Desktop Version -->
+        <div class="content-number">
+            +5
+        </div>
+
+        
+
+        <!-- Mobile Version -->
+        <div class="term-timing">Fall 2022 - 2023</div>
+
+        <div class="mobile-content">
+
+            <div class="mobile-content__hotkeys">
+                <i class="fa-solid fa-home"></i>
+                <i class="fa-solid fa-book"></i>
+                <i class="fa-solid fa-lock"></i>
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-gear"></i>
+            </div>
+
+            <hr class="mobile-content__seperator">
+
+            <button class="mobile-content__btn">Upload Files</button>
+
+            <button class="mobile-content__uploaded-btn">
+                4 file uploded <i class="fa-solid fa-angle-right"></i>
+            </button>
+
+            <ul class="mobile-content__uploaded-files">
+                <li>
+                    <img src="">
+                    <span>img title here</span>
+                    <i class="fa-solid fa-close"></i>
+                </li>
+
+                <li>
+                    <img src="">
+                    <span>img title here</span>
+                    <i class="fa-solid fa-close"></i>
+                </li>
+
+                <li>
+                    <img src="">
+                    <span>img title here</span>
+                    <i class="fa-solid fa-close"></i>
+                </li>
+
+                <li>
+                    <img src="">
+                    <span>img title here</span>
+                    <i class="fa-solid fa-close"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <!-- 2. general popup -->
 
     <!-- 3. preloader -->
+    <!-- Done -->
 
-    <!-- 4. sidebar menu -->
 
-    <!-- 4. sidebar -->
+    <div class="mobile-menus">
+        <!-- 4. sidebar menu -->
+        <div class="header-menu sidebar-menu"></div>
+
+        <!-- 5. navbar menu -->
+        <div class="header-menu navbar-menu">
+            <!-- details -->
+            <div class="navbar-menu__details">
+                <div class="navbar-menu__details__img">
+                    <img src="assets/images/user.jpg">
+                </div>
+                <h3 class="navbar-menu__details__name">Student Name</h3>
+                <h4 class="navbar-menu__details__id">Student ID</h4>
+                <button class="navbar-menu__details__btn">Edit profile</button>
+            </div>
+
+            <hr class="outer-seperator">
+
+            <!-- links -->
+            <ul class="navbar-menu__controls">
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Settings <i class="fa-solid fa-angle-right"></i></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-bell"></i>
+                        <span>Notification <i class="fa-solid fa-angle-right"></i></span>
+                    </a>
+                </li>
+
+                <hr class="inner-seperator">
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-calendar"></i>
+                        <span>Calendar <i class="fa-solid fa-angle-right"></i></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-wallet"></i>
+                        <span>Financial <i class="fa-solid fa-angle-right"></i></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-fire"></i>
+                        <span>Streaks <i class="fa-solid fa-angle-right"></i></span>
+                    </a>
+                </li>
+
+                <hr class="inner-seperator">
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span>Help <i class="fa-solid fa-angle-right"></i></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <span>Suggestions <i class="fa-solid fa-angle-right"></i></span>
+                    </a>
+                </li>
+
+                <hr class="inner-seperator">
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-sign-out"></i>
+                        <span>Sign out <i class="fa-solid fa-angle-right"></i></span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="navbar-menu__version">Website Version 00.01</div>
+
+        </div>
+
+    </div>
+
+    <!-- 6. dialog as a header menus -->
+    <!-- <dialog></dialog> -->
+
 </body>
 
 </html>
