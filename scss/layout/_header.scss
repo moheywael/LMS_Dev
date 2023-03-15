@@ -27,7 +27,7 @@ header.header {
     height: 100%;
     overflow: hidden;
     width: 100%;
-    z-index: 22;
+    z-index: 1000;
 }
 
 // Mobile Menus
@@ -167,6 +167,7 @@ header.header {
 }
 
 .activity-center {
+    z-index: 999;
     .term-timing {
         font-size: 0.8rem;
         color: var(--clr-white);

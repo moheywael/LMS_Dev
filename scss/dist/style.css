@@ -54,8 +54,8 @@ html {
 :root {
   --clr-primary-100: #5350f7;
   --clr-primary-200: #4240c6;
-  --clr-secondary-100: #f2f2ff;
-  --clr-nutral-100: #fcfcfc;
+  --clr-secondary-100: #e7e7f7;
+  --clr-nutral-100: #f0e4e4;
   --clr-danger-100: #ff5555;
   --clr-success-100: #28a745;
   --clr-warning-100: #ffc107;
@@ -114,7 +114,7 @@ header.header .mobile-header-controls > div > * {
   height: 100%;
   overflow: hidden;
   width: 100%;
-  z-index: 22;
+  z-index: 1000;
 }
 
 .header-menu {
@@ -231,6 +231,9 @@ header.header .mobile-header-controls > div > * {
   box-shadow: var(--box-shadow-ds), var(--box-shadow);
 }
 
+.activity-center {
+  z-index: 999;
+}
 .activity-center .term-timing {
   font-size: 0.8rem;
   color: var(--clr-white);
@@ -779,7 +782,7 @@ body.login {
 }
 .main-scoreboard__table table td:nth-child(1),
 .main-scoreboard__table table th:nth-child(1) {
-  width: 40px;
+  width: 30px;
 }
 .main-scoreboard__table table th,
 .main-scoreboard__table table td {
@@ -791,7 +794,11 @@ body.login {
   color: var(--clr-seperator);
 }
 .main-scoreboard__table table thead tr th {
+  background-color: var(--clr-white);
+  z-index: 22;
   font-weight: 100;
+  position: sticky;
+  top: 0;
 }
 .main-scoreboard__table table tbody {
   border-collapse: separate;
@@ -799,6 +806,14 @@ body.login {
 .main-scoreboard__table table tbody tr {
   height: 40px;
   background-color: var(--clr-secondary-100);
+}
+.main-scoreboard__table table tbody tr td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.main-scoreboard__table table tbody tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .main-scoreboard__table table tbody tr:hover {
   background-color: #eee;
@@ -827,14 +842,105 @@ body.login {
     display: none;
   }
 }
+@media (max-width: 700px) {
+  .main-scoreboard {
+    height: min(30%, 150px);
+  }
+}
+
+.student-score-profile {
+  background-color: white;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3), var(--box-shadow-ds);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  min-width: 80%;
+  z-index: 33;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.student-score-profile__banner {
+  flex: 1;
+  border-radius: 10px;
+  background-color: var(--clr-primary-100);
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+.student-score-profile__banner__img {
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.student-score-profile__banner__img img {
+  height: 100%;
+}
+.student-score-profile__banner__titlebox {
+  display: flex;
+  flex-direction: column;
+}
+.student-score-profile__banner__titlebox__title {
+  font-weight: 600;
+}
+.student-score-profile__banner__points {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.student-score-profile__banner__points__number {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.student-score-profile__details {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+.student-score-profile__details__detailbox {
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+  height: 60px;
+  display: flex;
+  padding: 4px;
+  align-items: center;
+  gap: var(--gap);
+}
+.student-score-profile__details__detailbox__icon {
+  background-color: var(--clr-nutral-100);
+  border-radius: var(--border-raduis-xmed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 52px;
+  color: var(--clr-primary-100);
+}
+.student-score-profile__details__detailbox__titlebox__title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.student-score-profile__details__detailbox__titlebox__number {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+@media (max-width: 700px) {
+  .student-score-profile__details {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
 
 body {
   display: flex;
   position: relative;
-}
-body .main,
-body header.header {
-  background-color: var(--clr-secondary-100);
 }
 body header.header {
   border-bottom: var(--seperator-height) solid var(--clr-seperator);

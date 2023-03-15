@@ -90,7 +90,8 @@
 
             td:nth-child(1),
             th:nth-child(1) {
-                width: 40px;
+                width: 30px;
+                // border: 2px solid;
             }
 
             th,
@@ -104,8 +105,14 @@
             thead {
                 tr {
                     color: var(--clr-seperator);
+
                     th {
+                        background-color: var(--clr-white);
+                        z-index: 22;
                         font-weight: 100;
+                        // border: 2px solid;
+                        position: sticky;
+                        top: 0;
                         // color: red;
                     }
                 }
@@ -120,6 +127,15 @@
                     height: 40px;
                     // box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
                     background-color: var(--clr-secondary-100);
+
+                    td:first-child {
+                        border-top-left-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                    }
+                    td:last-child {
+                        border-top-right-radius: 10px;
+                        border-bottom-right-radius: 10px;
+                    }
 
                     &:hover {
                         background-color: #eee;
@@ -156,6 +172,124 @@
                     display: none;
                 }
             }
+        }
+    }
+
+    @media (max-width: 700px) {
+        height: min(30%, 150px);
+    }
+}
+
+.student-score-profile {
+    background-color: white;
+    box-shadow: 0 0 10px 5px rgba(0 0 0 / 0.3), var(--box-shadow-ds);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    // max-width: 90%;
+    min-width: 80%;
+    // min-height: 0%;
+    z-index: 33;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__banner {
+        // border: 2px solid;
+        // flex-shrink: 0;
+        flex: 1;
+        border-radius: 10px;
+        background-color: var(--clr-primary-100);
+        padding: 20px 20px;
+        display: flex;
+        // flex-direction: column;
+        align-items: center;
+        color: white;
+
+        &__img {
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        &__titlebox {
+            display: flex;
+            flex-direction: column;
+
+            &__title {
+                // background-color: red;
+
+                font-weight: 600;
+            }
+        }
+
+        &__points {
+            margin-left: auto;
+            // background-color: red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__number {
+                font-size: 3rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__details {
+        flex: 2;
+        // border: 2px red solid;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        // grid-template-rows: ;
+        gap: 12px;
+
+        &__detailbox {
+            // border: 2px solid;
+            box-shadow: var(--box-shadow);
+            border-radius: 10px;
+            height: 60px;
+            display: flex;
+            padding: 4px;
+            align-items: center;
+            gap: var(--gap);
+
+            &__icon {
+                background-color: var(--clr-nutral-100);
+                border-radius: var(--border-raduis-xmed);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: calc(60px - 8px);
+                color: var(--clr-primary-100);
+            }
+
+            &__titlebox {
+                &__title {
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+
+                &__number {
+                    font-size: 0.8rem;
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        @media (max-width: 700px) {
+            max-height: 300px;
+            overflow-y: auto;
         }
     }
 }

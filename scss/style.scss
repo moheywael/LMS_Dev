@@ -14,11 +14,12 @@
 body {
     display: flex;
     position: relative;
+    // background-color: var(--clr-white);
 
-    .main,
-    header.header {
-        background-color: var(--clr-secondary-100);
-    }
+    // .main,
+    // header.header {
+    //     background-color: var(--clr-secondary-100);
+    // }
 
     header.header {
         border-bottom: var(--seperator-height) solid var(--clr-seperator);
