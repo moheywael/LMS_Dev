@@ -14,6 +14,8 @@ let activityCenter = document.querySelector(".activity-center")
 
 // ------------------------------
 
+// sidebar__body__sub-menu--opened
+
 activityCenter.addEventListener("click", evt => {
     evt.stopPropagation()
     header_navbarMenu.classList.remove("navbar-menu--opened")
@@ -26,7 +28,7 @@ header_navbarMenu.addEventListener("click", evt => {
 })
 
 header_sidebarMenu.addEventListener("click", evt => {
-    // evt.stopPropagation()
+    evt.stopPropagation()
 })
 
 header_sidebarToggle.addEventListener("click", evt => {
@@ -60,6 +62,8 @@ document.addEventListener("click", evt => {
         header_sidebarMenu.classList.contains("sidebar-menu--opened") ? header_sidebarMenu.classList.remove("sidebar-menu--opened") : ""
     }
 })
+
+
 
 // toggles.forEach(toggle => {
 //     toggle.addEventListener("click", () => {

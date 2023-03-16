@@ -53,9 +53,115 @@ header.header {
 // Mobile Sidebar
 .sidebar-menu {
     left: -100%;
+    display: flex;
+    flex-direction: column;
     &--opened {
         left: 0;
         box-shadow: var(--box-shadow-ds), var(--box-shadow);
+    }
+
+    &__logobox {
+        // border: red 2px solid;
+        display: flex;
+        align-items: center;
+        // height: 15%;
+        padding: 30px 10px;
+
+        &__img {
+            width: var(--size-med);
+            height: var(--size-med);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-right: 10px;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        &__textbox {
+            display: flex;
+            flex-direction: column;
+
+            & span:nth-child(1) {
+                font-weight: bold;
+            }
+
+            & span:nth-child(2) {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    hr {
+        margin-inline: 10px;
+    }
+
+    &__menu {
+        padding: 10px;
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+
+        > li a {
+            display: flex;
+            border-radius: 8px;
+            align-items: center;
+
+            &:hover {
+                background-color: #cccccc;
+            }
+
+            > i {
+                width: var(--size-med);
+                height: var(--size-med);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            & > span {
+                display: flex;
+                flex-grow: 1;
+
+                & i {
+                    margin: 0 10px 0 auto;
+                }
+            }
+        }
+    }
+
+    &__sub-menu {
+        margin: 5px 0;
+        display: none;
+
+        border: 2px solid;
+
+        &--opened {
+            display: block;
+        }
+
+        .border {
+            border-left: 1px solid;
+            margin-left: calc(var(--size-med) / 2);
+        }
+
+        li a {
+            display: flex;
+            align-items: center;
+            border-radius: calc(8px / 2);
+            margin: 0 calc(var(--size-med) / 4);
+            min-width: calc(var(--size-med) - 10px);
+            height: calc(var(--size-med) - 10px);
+            padding-left: 10px;
+
+            &:hover {
+                background-color: #cccccc;
+            }
+        }
     }
 }
 
