@@ -222,7 +222,7 @@
         left: 50%;
         translate: -50% 50%;
         cursor: auto;
-
+        box-shadow: var(--box-shadow);
         // hard-coded
         width: 500px !important; //a way to remove > !important
         height: 400px;
@@ -238,7 +238,7 @@
     }
 
     @media (max-width: 700px) {
-        width: 40%;
+        width: 40% !important;
         height: calc((var(--header-height) - var(--padding)) - (var(--padding) / 2));
         background-color: rgb(0 0 0 / 0.2);
         top: calc(var(--padding) / 2);
@@ -262,7 +262,9 @@
             // min-height: 40%;
             // height: 40%;
             // min-height: 150px;
-            height: fit-content; //working just on web not iphone
+            // height: fit-content; //working just on web not iphone
+            // height: fit-content(); //working just on web not iphone
+
             // height: min(150px, 60%);
             height: max(60%, 150px);
 

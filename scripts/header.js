@@ -1,4 +1,12 @@
 // :::::::::::: Desktop :::::::::::
+let header__boxBtns = document.querySelectorAll(".header__box button")
+let header__box__streaks__menu = document.querySelector(".header__box__streaks__menu")
+let header__box__profile__menu = document.querySelector(".header__box__profile__menu")
+let header__box__notification__menu = document.querySelector(".header__box__notification__menu")
+
+let header__box__streaks = document.querySelector(".header__box__streaks")
+let header__box__profile = document.querySelector(".header__box__profile")
+let header__box__notification = document.querySelector(".header__box__notification")
 
 // :::::::::::: Mobile ::::::::::::
 let toggles = document.querySelectorAll(".header-toggle")
@@ -86,3 +94,42 @@ document.addEventListener("click", evt => {
 //         })
 //     })
 // })
+
+
+header__box__notification__menu.addEventListener("click", (evt) => {
+    evt.stopPropagation()
+})
+
+header__box__streaks__menu.addEventListener("click", (evt) => {
+    evt.stopPropagation()
+})
+
+header__box__profile__menu.addEventListener("click", (evt) => {
+    evt.stopPropagation()
+})
+
+
+header__boxBtns.forEach(boxBtn => {
+
+    boxBtn.addEventListener("click", evt => {
+        evt.stopPropagation()
+
+        if (evt.target.classList.contains("header__box__profile")) {
+            header__box__streaks__menu.classList.remove("header__box__streaks__menu--opened")
+            header__box__notification__menu.classList.remove("header__box__notification__menu--opened")
+            header__box__profile__menu.classList.toggle("header__box__profile__menu--opened")
+        }
+
+        if (evt.target.classList.contains("header__box__streaks")) {
+            header__box__profile__menu.classList.remove("header__box__profile__menu--opened")
+            header__box__notification__menu.classList.remove("header__box__notification__menu--opened")
+            header__box__streaks__menu.classList.toggle("header__box__streaks__menu--opened")
+        }
+
+        if (evt.target.classList.contains("header__box__notification")) {
+            header__box__profile__menu.classList.remove("header__box__profile__menu--opened")
+            header__box__streaks__menu.classList.remove("header__box__streaks__menu--opened")
+            header__box__notification__menu.classList.toggle("header__box__notification__menu--opened")
+        }
+    })
+})

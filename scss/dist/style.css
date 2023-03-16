@@ -21,6 +21,7 @@ aside ul * {
 
 img {
   max-width: 100%;
+  max-height: 100%;
   display: block;
 }
 
@@ -119,7 +120,7 @@ header.header .mobile-header-controls > div > * {
 
 .header-menu {
   pointer-events: all;
-  width: min(400px, 80%);
+  width: min(300px, 80%);
   height: 100%;
   z-index: 22;
   position: absolute;
@@ -407,6 +408,97 @@ header.header .mobile-header-controls > div > * {
   }
 }
 
+.header__box {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  padding-right: 10px;
+  gap: 10px;
+}
+.header__box > button {
+  border: 1px solid transparent;
+}
+.header__box > button:hover {
+  border: 1px solid var(--clr-primary-100);
+}
+.header__box__profile {
+  height: 40px;
+  background-color: var(--clr-secondary-100);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 0;
+  gap: 10px;
+  position: relative;
+}
+.header__box__profile img {
+  border-radius: 10px;
+}
+.header__box__streaks__menu, .header__box__profile__menu, .header__box__notification__menu {
+  z-index: 32;
+  position: absolute;
+  display: none;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+.header__box__streaks__menu li, .header__box__profile__menu li, .header__box__notification__menu li {
+  width: 100%;
+}
+.header__box__streaks__menu li a, .header__box__profile__menu li a, .header__box__notification__menu li a {
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.header__box__streaks__menu li a i, .header__box__profile__menu li a i, .header__box__notification__menu li a i {
+  width: var(--size-sm);
+  height: var(--size-sm);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__box__streaks__menu li a:hover, .header__box__profile__menu li a:hover, .header__box__notification__menu li a:hover {
+  background-color: var(--clr-secondary-100);
+}
+.header__box__streaks__menu .signout-btn, .header__box__profile__menu .signout-btn, .header__box__notification__menu .signout-btn {
+  width: 100%;
+  margin-top: 10px;
+  background-color: var(--clr-primary-100);
+  color: var(--clr-white);
+  border-radius: 5px;
+  padding: 5px;
+}
+.header__box__streaks__menu--opened, .header__box__profile__menu--opened, .header__box__notification__menu--opened {
+  top: 120%;
+  right: 0;
+  border: 2px solid var(--clr-primary-100);
+  width: 200px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+.header__box__streaks, .header__box__notification {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--size-med);
+  width: var(--size-med);
+  background-color: var(--clr-secondary-100);
+  border-radius: 10px;
+}
+@media (max-width: 700px) {
+  .header__box {
+    display: none;
+  }
+}
+
 main.main {
   flex-grow: 1;
   position: relative;
@@ -593,6 +685,7 @@ main.main {
   left: 50%;
   translate: -50% 50%;
   cursor: auto;
+  box-shadow: var(--box-shadow);
   width: 500px !important;
   height: 400px;
 }
@@ -605,7 +698,7 @@ main.main {
 }
 @media (max-width: 700px) {
   .activity-center {
-    width: 40%;
+    width: 40% !important;
     height: calc(var(--header-height) - var(--padding) - var(--padding) / 2);
     background-color: rgba(0, 0, 0, 0.2);
     top: calc(var(--padding) / 2);
@@ -624,8 +717,6 @@ main.main {
     border: 2px solid var(--clr-primary-100);
     top: 10%;
     width: 80% !important;
-    height: -moz-fit-content;
-    height: fit-content;
     height: max(60%, 150px);
   }
   .activity-center--active .term-timing {
