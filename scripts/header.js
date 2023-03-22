@@ -22,6 +22,7 @@ let header_navbarMenu = document.querySelector(".navbar-menu")
 let activityCenter = document.querySelector(".activity-center")
 let mobile_activityCenter = document.querySelector(".activity-center-mobile")
 let mobile_activityCenterUploadBtn = document.querySelector(".mobile-content__uploaded-btn")
+let list;
 
 // ------------------------------
 
@@ -35,9 +36,9 @@ mobile_activityCenter.addEventListener("click", evt => {
 })
 
 mobile_activityCenterUploadBtn.addEventListener('click', () => {
-    let list = document.querySelector(".mobile-content__uploaded-files")            
-    list.style.maxHeight? list.style.maxHeight = null:list.style.maxHeight = list.scrollHeight + "px" 
-    
+    list = document.querySelector(".mobile-content__uploaded-files")
+    list.style.maxHeight ? list.style.maxHeight = null : list.style.maxHeight = list.scrollHeight + "px"
+
 });
 
 activityCenter.addEventListener("click", evt => {
@@ -84,6 +85,7 @@ document.addEventListener("click", evt => {
 
     if (evt.target != mobile_activityCenter) {
         mobile_activityCenter.classList.remove("activity-center-mobile--active")
+        list.style.maxHeight = null
         // fileUploadedBody.classList.remove("active")
     }
 
@@ -122,11 +124,11 @@ header__box__notification__menu.addEventListener("click", (evt) => {
 })
 
 header__box__streaks__menu.addEventListener("click", (evt) => {
-    evt.stopPropagation()
+    // evt.stopPropagation()
 })
 
 header__box__profile__menu.addEventListener("click", (evt) => {
-    evt.stopPropagation()
+    // evt.stopPropagation()
 })
 
 
