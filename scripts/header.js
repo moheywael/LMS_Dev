@@ -18,11 +18,27 @@ let header_sidebarMenu = document.querySelector(".sidebar-menu")
 
 let header_navbarToggle = document.querySelector(".navbar-toggle")
 let header_navbarMenu = document.querySelector(".navbar-menu")
+
 let activityCenter = document.querySelector(".activity-center")
+let mobile_activityCenter = document.querySelector(".activity-center-mobile")
+let mobile_activityCenterUploadBtn = document.querySelector(".mobile-content__uploaded-btn")
 
 // ------------------------------
 
 // sidebar__body__sub-menu--opened
+
+mobile_activityCenter.addEventListener("click", evt => {
+    evt.stopPropagation()
+    header_navbarMenu.classList.remove("navbar-menu--opened")
+    header_sidebarMenu.classList.remove("sidebar-menu--opened")
+    mobile_activityCenter.classList.add("activity-center-mobile--active")
+})
+
+mobile_activityCenterUploadBtn.addEventListener('click', () => {
+    let list = document.querySelector(".mobile-content__uploaded-files")            
+    list.style.maxHeight? list.style.maxHeight = null:list.style.maxHeight = list.scrollHeight + "px" 
+    
+});
 
 activityCenter.addEventListener("click", evt => {
     evt.stopPropagation()
@@ -63,6 +79,11 @@ document.addEventListener("click", evt => {
 
     if (evt.target != activityCenter) {
         activityCenter.classList.remove("activity-center--active")
+        // fileUploadedBody.classList.remove("active")
+    }
+
+    if (evt.target != mobile_activityCenter) {
+        mobile_activityCenter.classList.remove("activity-center-mobile--active")
         // fileUploadedBody.classList.remove("active")
     }
 

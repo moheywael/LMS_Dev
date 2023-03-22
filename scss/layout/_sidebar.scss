@@ -199,23 +199,26 @@
 .activity-center {
     background-color: var(--clr-primary-100);
     width: calc(var(--sidebar-width) - calc(var(--padding) * 2));
+    min-width: 0;
     height: 100px;
     position: absolute;
     bottom: var(--padding);
     left: var(--padding);
     border-radius: 10px;
     cursor: pointer;
-    transition: bottom var(--transition-duration), left var(--transition-duration), width var(--transition-duration),
-        height var(--transition-duration), translate var(--transition-duration), border var(--transition-duration),
-        top var(--transition-duration);
+    transition: bottom 
+    var(--transition-duration),
+    left var(--transition-duration),
+    width var(--transition-duration),
+    min-width var(--transition-duration),
+    height var(--transition-duration),
+    translate var(--transition-duration),
+    border var(--transition-duration),
+    top var(--transition-duration);
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    .term-timing {
-        display: none;
-    }
 
     &--active {
         bottom: 50%;
@@ -223,11 +226,11 @@
         translate: -50% 50%;
         cursor: auto;
         box-shadow: var(--box-shadow);
-        // hard-coded
-        width: 500px !important; //a way to remove > !important
+        // width: 500px !important; //a way to remove > !important
+        min-width: min(40%, 500px);
         height: 400px;
 
-        .content-number {
+        .content-number {   
             display: none;
         }
     }
@@ -238,40 +241,7 @@
     }
 
     @media (max-width: 700px) {
-        width: 40% !important;
-        height: calc((var(--header-height) - var(--padding)) - (var(--padding) / 2));
-        background-color: rgb(0 0 0 / 0.2);
-        top: calc(var(--padding) / 2);
-        left: 50%;
-        translate: -50% 0;
-
-        .term-timing {
-            display: block;
-        }
-
-        .content-number {
-            display: none;
-        }
-
-        &--active {
-            translate: -50% 0;
-            background-color: var(--clr-secondary-100);
-            border: 2px solid var(--clr-primary-100);
-            top: 10%;
-            width: 80% !important;
-            // min-height: 40%;
-            // height: 40%;
-            // min-height: 150px;
-            // height: fit-content; //working just on web not iphone
-            // height: fit-content(); //working just on web not iphone
-
-            // height: min(150px, 60%);
-            height: max(60%, 150px);
-
-            .term-timing {
-                display: none;
-            }
-        }
+        display: none;
     }
 }
 
